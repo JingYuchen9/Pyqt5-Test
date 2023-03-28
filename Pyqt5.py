@@ -25,7 +25,12 @@ class DrawAll(QWidget):
         self.timer.start(50)
 
     def update_position(self):
-        self.x += 10
+
+        if self.x > 1800:
+            self.x = 0
+        if self.x <= 1800:
+            self.x += 10
+
         self.update()
 
     def paintEvent(self, event):
@@ -105,7 +110,6 @@ def drawMoveCircle(self):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    print("进来了")
     x_Value_list = [1353, 1429, 767, 108, 183, 1443, 809, 512, 1041, 983]
     y_Value_list = [487, 915, 915, 299, 336, 525, 981, 925, 983, 910]
     main = DrawAll()
