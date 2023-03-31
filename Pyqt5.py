@@ -57,6 +57,8 @@ class DrawAll(QWidget):
                                   random.randint(0, 255),
                                   random.randint(0, 255)), 30, Qt.SolidLine))
             qp.drawPoint(int(x_value+hr/2), int(y_value+zr/2))
+            qp.setPen(QPen(QColor(0, 0, 0), 5, Qt.SolidLine))
+            qp.drawText(int(x_value+hr/2), int(y_value+zr/2) - 40, f"{int(x_value+hr/2)}, {int(y_value+zr/2)}")
             x_Center_list.append(int(x_value+hr/2))
             y_Center_list.append(int(y_value+zr/2))
             # print("x = ", int(x_value+hr/2))
@@ -95,6 +97,8 @@ def drawMoveCircle(self):
                                random.randint(0, 255),
                                random.randint(0, 255)), 30, Qt.SolidLine))
     painter.drawPoint(int(self.x + 600 / 2), int(600 + 600 / 2))
+    painter.setPen(QPen(QColor(0, 0, 0), 5, Qt.SolidLine))
+    painter.drawText(int(self.x + 600 / 2), int(600 + 600 / 2)-50, f"{int(self.x + 600 / 2)}, {int(600 + 600 / 2)}")
     print(int(self.x + 600 / 2))
     print(int(600 + 600 / 2))
     painter.setPen(QPen(QColor(0, 0, 0), 5, Qt.SolidLine))
