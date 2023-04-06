@@ -22,7 +22,7 @@ class DrawAll(QWidget):
         self.x = 50
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_position)
-        self.timer.start(50)
+        self.timer.start(1000)
 
     def update_position(self):
 
@@ -76,7 +76,7 @@ def drawline(qp):
     for start in range(10):
         for end in range(9):
             if(np.sqrt(np.square(x_Center_list[start] - x_Center_list[end]) +
-                       np.square(y_Center_list[start] - y_Center_list[end])) <= 300):
+                       np.square(y_Center_list[start] - y_Center_list[end])) <= 150):
                 qp.drawLine(int(x_Center_list[start]),
                             int(y_Center_list[start]),
                             int(x_Center_list[end]),
@@ -108,7 +108,7 @@ def drawMoveCircle(self):
     # 所有圆的圆心坐标()
     for distance in range(10):
         if np.sqrt(np.square(int(self.x + 600 / 2) - x_Center_list[distance]) +
-                   np.square(900 - y_Center_list[distance])) <= 450:
+                   np.square(900 - y_Center_list[distance])) <= 300:
             painter.drawLine(int(self.x + 600 / 2), 900, x_Center_list[distance], y_Center_list[distance])
 
 
